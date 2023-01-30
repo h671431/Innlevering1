@@ -1,17 +1,18 @@
+package no.hvl.data102;
 import no.hvl.data102.adt.FilmarkivADT;
 
-public abstract class Filmarkiv implements FilmarkivADT<Film> {
+public abstract class Filmarkiv implements FilmarkivADT {
 
 	private Film[] filmTab;
 	private int antall;
 
 
 	public Filmarkiv(int antall) {
-		this.antall =0;
+		this.antall = 0;
       }
 
       public Film finnFilm(int nr) {
-            Boolean filmFunnet = false;
+            boolean filmFunnet = false;
             Film funnetFilm = null;
             while (!filmFunnet) {
                   for (int i = 0; i < filmTab.length; i++) {
