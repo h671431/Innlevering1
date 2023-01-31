@@ -1,5 +1,55 @@
 package no.hvl.data102;
+import no.hvl.dat102.kjedet.LinearNode;
 
-public class LinearNode {
+//  Representerer en node.
+//************************************************************
+
+public class LinearNode<T>{
+  private LinearNode<T> neste;
+  private T element;
+ 
+  /**********************************************************
+    Oppretter en tom node
+  **********************************************************/
+  public LinearNode(){
+    neste   =  null;
+    element = null;
+  }
+   /**********************************************************
+    Oppretter en node med et element.
+  **********************************************************/
+  public LinearNode (T elem){
+    neste   = null;
+    element = elem;
+  }
+ /**********************************************************
+    Returnerer etterf�lger.
+  **********************************************************/
+  public LinearNode<T> getNeste(){
+    return neste;
+  }
+ 
+  /**********************************************************
+    Setter neste til node
+  **********************************************************/
+  public void setNeste (LinearNode<T> node){
+    neste = node;
+  }
+ 
+  /**********************************************************
+    Returnerer elementet til denne noden
+  **********************************************************/
+  public T getElement() {
+    return element;
+  }
+ 
+  /**********************************************************
+    Setter nytt element for denne noden.
+  **********************************************************/
+  public void setElement (T elem){
+    element = elem;
+  }
+
+}//class
 
 }

@@ -10,8 +10,8 @@ public abstract class Filmarkiv implements FilmarkivADT {
 	public Filmarkiv(int antall) {
 		this.antall = 0;
       }
-
-      public Film finnFilm(int nr) {
+	
+	public Film finnFilm(int nr) {
             boolean filmFunnet = false;
             Film funnetFilm = null;
             while (!filmFunnet) {
