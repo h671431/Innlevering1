@@ -16,8 +16,9 @@ public interface FilmarkivADT {
 	/** 
 	  * Legger til en ny film. 
 	  * @param nyFilm 
+	 * @return 
 	  */
-	void leggTilFilm(Film nyFilm); 
+	boolean leggTilFilm(Film nyFilm); 
 	 
 	 /** 
 	  * Sletter en fil med gitt nr 
