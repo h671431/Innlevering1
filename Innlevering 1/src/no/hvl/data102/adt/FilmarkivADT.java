@@ -12,7 +12,7 @@ public interface FilmarkivADT {
 	
 	*/
 	
-	Film finnFilm(int nr);
+	Film[] finnFilm(int nr);
 	/** 
 	  * Legger til en ny film. 
 	  * @param nyFilm 

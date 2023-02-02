@@ -1,5 +1,7 @@
 package no.hvl.dato102.klient;
 
+import no.hvl.data102.adt.FilmarkivADT;
+
 public class Meny {
 
 	private Tekstgrensesnitt tekstgr;  
@@ -11,8 +13,7 @@ public class Meny {
 	 } 
 	  
 	 public void start(){ 
-	             // legg inn en del forhåndsdefinerte filmer for å teste metodene 
-	  // TODO 
+	             
 	 }
 
 }
