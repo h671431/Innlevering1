@@ -7,26 +7,25 @@ public class Filmarkiv2 implements FilmarkivADT{
 	private int antall;
 	private LinearNode<Film> start;
 	
-	@Override
-	public Film[] finnFilm(int filmnr) {
-		Film[] tab = new Film[antall];
-		
-		LinearNode<Film> neste = start;
-		for(int i =0; i<antall && neste != null; i++) {
-			tab[i] = neste.getElement();
-			neste = neste.getNeste();
+	public Film finnFilm(int filmnr) {
+		LinearNode<Film> node = start;
+		Film funnetFilm = null;
+		for(int i = 0; i < antall; i++) {
+			if(node.getElement().getFilmnr() == filmnr) {
+				funnetFilm = node.getElement();
+				return funnetFilm;
+			}
+			node = node.getNeste();
 		}
-		return tab;
+		return null;
 	}
 	
 	@Override
-	public boolean leggTilFilm(Film nyFilm) {
+	public void leggTilFilm(Film nyFilm) {
 		LinearNode<Film> nynode = new LinearNode<>(nyFilm);
 		nynode.setNeste(start);
 		start = nynode;
 		antall++;
-		
-		return true;
 	}
 	
 	@Override
@@ -37,6 +36,7 @@ public class Filmarkiv2 implements FilmarkivADT{
 		if (neste == null) {
 			return false;
 		}
+		
 		if(neste.getElement().getFilmnr()==filmnr) {
 			neste = neste.getNeste();
 			antall--;

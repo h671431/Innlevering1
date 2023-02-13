@@ -1,27 +1,32 @@
 package no.hvl.dato102.klient;
 
-import no.hvl.dat102.Film;
-import no.hvl.dat102.Sjanger;
+import no.hvl.data102.Film;
+import no.hvl.data102.Sjanger;
 import no.hvl.data102.adt.FilmarkivADT;
 
 public class Meny {
 
-	private Tekstgrensesnitt tekstgr;  
-	 private FilmarkivADT filmarkiv;  
-	  
-	 public Meny(FilmarkivADT filmarkiv){ 
-	  tekstgr = new Tekstgrensesnitt();  
-	  this.filmarkiv = filmarkiv;
-	 } 
-	  
-	 public void start(){ 
+	private Tekstgrensesnitt tekstgr;
+	private FilmarkivADT filmarkiv;
+
+	public Meny(FilmarkivADT filmarkiv) {
+		tekstgr = new Tekstgrensesnitt();
+		this.filmarkiv = filmarkiv;
+	}
+
+	public void start(){ 
 		 // Legger inn fillmer
+		 
+		// Lag testdata med å opprette objekter:
+		//public Film(int filmnr, String produsent, String tittel, Sjanger sjanger, int aar, String filmselskap) {
+		 Film film1 = new Film(1, "Amy Poller", "Mean Girls", Sjanger.DRAMA, 2004, "Universal");
+		 
 		 String[] filmtittel = {
 				 "Mean girla", 
 				 "Leagally blond",
 				 "Bring it on, All or nothing",
 				 "American pie",
-				 "The notebook"
+				 "The notebook",
 				 "Titanic",
 				 "Frozen",
 		 };
@@ -36,13 +41,6 @@ public class Meny {
 				 "Walt Dinsney",
 				 "Jamer Cameron",
 				 "Quentin Taration",
-		 };
-		 int nr = 0;
-		 for(String film : filmtittel) {
-			 Sjanger sjanger = no.hvl.data102.Sjanger.values()[nr % Sjanger.values()length];
-			 Film nyfilm = new Film(nr++, filmprodusent[nr % filmprodusent.length], film (2001 + nr), sjanger, filmselskap[nr % produsenter.length]);
-			 filmarkiv.leggTilFilm(nyfilm);
-		 }
-				 
+		 };				 
 	 }
 }

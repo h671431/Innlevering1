@@ -1,5 +1,4 @@
 package no.hvl.data102;
-import no.hvl.dat102.kjedet.LinearNode;
 
 //  Representerer en node.
 //************************************************************
@@ -52,4 +51,3 @@ public class LinearNode<T>{
 
 }//class
 
-}

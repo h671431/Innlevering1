@@ -2,17 +2,17 @@ package no.hvl.dato102.klient;
 
 import no.hvl.data102.Film;
 import no.hvl.data102.adt.FilmarkivADT;
-import no.hvl.dat102.Sjanger;
+import no.hvl.data102.Sjanger;
 import java.util.Scanner;
 
 
-public class Tekstgrensesnitt {
+public class Tekstgrensesnitt  {
 	
 
 	// lese opplysningene om en FILM fra tastatur  
 	 public Film lesFilm(){ 
 		 Scanner scan = new Scanner(System.in);
-		 Film min = new Film();
+		 Film min = new Film(1, null, null, null, 0, null);
 		 try {
 			 System.out.println("Tittel ");
 			 min.setTittel(scan.nextLine());
