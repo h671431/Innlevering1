@@ -67,7 +67,7 @@ public abstract class KoeADTTest {
 			koe.utKoe();
 			assertTrue(koe.erTom());
 		}catch (EmptyCollectionException e) {
-			fail("Koeonn eller koeut feilet" + e.getMessage());
+			fail("Koeinn eller koeut feilet" + e.getMessage());
 		}
 	}
 	

@@ -83,7 +83,7 @@ public class Filmarkiv2 implements FilmarkivADT{
 		Film[] filmtab2 = new Film[n];
 		int i = 0;
 		while (i<n) {
-			filmtab2[i] = filmer[n];
+			filmtab2[i] = filmer[i];
 			i++;
 		}
 		return filmtab2;

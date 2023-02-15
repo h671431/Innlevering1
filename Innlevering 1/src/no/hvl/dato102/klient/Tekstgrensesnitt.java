@@ -3,7 +3,8 @@ package no.hvl.dato102.klient;
 import no.hvl.data102.Film;
 import no.hvl.data102.adt.FilmarkivADT;
 import no.hvl.data102.Sjanger;
-import java.util.Scanner;
+//import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 
 public class Tekstgrensesnitt  {
@@ -11,7 +12,7 @@ public class Tekstgrensesnitt  {
 
 	// lese opplysningene om en FILM fra tastatur  
 	 public Film lesFilm(){ 
-		 Scanner scan = new Scanner(System.in);
+		/* Scanner scan = new Scanner(System.in);
 		 Film min = new Film(1, null, null, null, 0, null);
 		 try {
 			 System.out.println("Tittel ");
@@ -28,12 +29,33 @@ public class Tekstgrensesnitt  {
 			 System.out.println("Informasjonen er ikke korrekt");
 		 }
 		 return min;
+		*/ 
+		 
+		try {
+			int filmnr = Integer.parseInt(JOptionPane.showInputDialog("Filmnummer:"));
+			int utgivelsesår = Integer.parseInt(JOptionPane.showInputDialog("Når ble filmen utgitt: "));
+			
+			String produsent = JOptionPane.showInputDialog(JOptionPane.showInputDialog("Produsent: "));
+			String tittel = JOptionPane.showInputDialog(JOptionPane.showInputDialog("Skriv inn tittel: "));
+			String filselskap = JOptionPane.showInputDialog(JOptionPane.showInputDialog("Filmselskap: "));
+			
+			String sjangerString = JOptionPane.showInputDialog("Skriv inn sjanger: ");
+			Sjanger sjanger = Sjanger.finnSjanger(sjangerString);
+			
+			Film film = new film(filmnr, produsent, tittel, sjanger, filmselskap);
+			
+			return film;
+		}
+		catch(Exception e) {
+			System.out.print(e);
+		}
+		return null;
 	 } 
 	 
 	 // vise en film med alle opplysninger på skjerm (husk tekst for sjanger) 
 	 //Viser en film med alle gitt opplysnigner fra bruker
 	 public void visFilm(Film film) { 
-		 try {
+	/*	 try {
 			 String [] min = film.toString().split("#");
 			 System.out.println("Tittel: " + min[1]);
 			 System.out.println("Produsent " + min[2]);
@@ -44,7 +66,11 @@ public class Tekstgrensesnitt  {
 		 } catch (Exception e) {
 			 System.out.println("Fant ikke filmen du leter etter");
 		 }
-	 } 
+	  */
+		 
+		 System.out.println(film.toString());
+	 }
+	 
 	 
 	 // Skrive ut alle Filmer med en spesiell delstreng i tittelen 
 	 public void skrivUtFilmDelstrengITittel(FilmarkivADT filma,  
