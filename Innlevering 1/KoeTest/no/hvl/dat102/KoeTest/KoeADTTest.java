@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 
-import no.hvl.dat102.adt.KoeADT;
-import no.hvl.dat201.exceptions.EmptyCollectionException;
+import no.hvl.data102.adt.KoeADT;
+import no.hvl.data102.exceptions.EmptyCollectionException;
 import org.junit.Test;
 
 public abstract class KoeADTTest {

@@ -20,6 +20,10 @@ public class Meny {
 		// Lag testdata med å opprette objekter:
 		//public Film(int filmnr, String produsent, String tittel, Sjanger sjanger, int aar, String filmselskap) {
 		 Film film1 = new Film(1, "Amy Poller", "Mean Girls", Sjanger.DRAMA, 2004, "Universal");
+		 Film film2 = new Film(2, "Walt Disney", "Frozen", Sjanger.ACTION, 2013, "Disney");
+		 Film film3 = new Film(3, "James Cameron", "Titanic", Sjanger.DRAMA, 1997, "Paramount Pictures");
+		 Film film4 = new Film(4, "Walt Disney", "Beauty and the beast", Sjanger.DRAMA, "Disney");
+		 
 		 
 		 String[] filmtittel = {
 				 "Mean girla", 
@@ -29,17 +33,19 @@ public class Meny {
 				 "The notebook",
 				 "Titanic",
 				 "Frozen",
+				 "Beauty and the beast"
 		 };
 		 String[] filmprodusent = {
 			"Universal",
 			"Disney",
 			"Warner Brothers",
 			"21th fox",
+			"Paramount Pictures"
 		 };
 		 String[] filmselskap = {
 				 "Amy Poller",
 				 "Walt Dinsney",
-				 "Jamer Cameron",
+				 "James Cameron",
 				 "Quentin Taration",
 		 };				 
 	 }
