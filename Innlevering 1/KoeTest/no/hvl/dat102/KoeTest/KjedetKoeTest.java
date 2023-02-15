@@ -1,10 +1,13 @@
-package no.hvl.dat102.KoeTest;
+package Test;
 
-public abstract class KjedetKoeTest extends KoeADTTest {
+import no.hvl.dat102.adt.KoeADT;
+import no.hvl.dat102.kjedet.KjedetKoe;
+import no.hvl.dat102.tabell.TabellSirkulaerKoe;
+
+public class KjedetKoeTest extends KoeADTTest {
 
 	@Override
-	protected KoeADT<Character> reset() {
-		return new KjedetKoe<Character>();
+	protected KjedetKoe<Integer> reset() {
+		return new KjedetKoe<Integer>();
 	}
-	
 }

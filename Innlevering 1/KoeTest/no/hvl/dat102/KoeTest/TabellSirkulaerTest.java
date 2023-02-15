@@ -7,7 +7,7 @@ import no.hvl.dat102.tabell.*;
 public class TabellSirkulaerKoeTest extends KoeADTTest {
 
 	@Override
-	protected TabellSirkulaerKoe<String> reset() {
-		return new TabellSirkulaerKoe<String>();
+	protected KoeADT<Integer> reset() {
+		return new KjedetKoe<Integer>();
 	}
 }

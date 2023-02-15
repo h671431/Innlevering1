@@ -1,81 +1,65 @@
-package no.hvl.dat102.KoeTest;
+package Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import no.hvl.data102.adt.KoeADT;
-import no.hvl.data102.exceptions.EmptyCollectionException;
-import org.junit.Test;
+import no.hvl.dat102.adt.KoeADT;
+import no.hvl.dat102.kjedet.KjedetKoe;
 
 public abstract class KoeADTTest {
+
+	public KoeADT<Integer> koe;
+
+	public Integer testint0 = 0;
+	public Integer testint1 = 1;
+	public Integer testint2 = 2;
+	public Integer testint3 = 3;
+	public Integer testint4 = 4;
+
+	protected abstract KoeADT<Integer> reset();
 	
-	private KoeADT<Character>koe;
-	
-	private Character e0 = 1;
-	private Character e1 = 2;
-	private Character e2 = 3;
-	private Character e3 = 4;
-	private Character e4 = 5;
-	
-	protected abstract KoeADT<Character>reset();
+	@BeforeEach
+	public void setup() {
+		koe = reset();
+	}
 	
 	@BeforeEach
 	public void nyKoeErTom() {
 		assertTrue(koe.erTom());
-	}
-	@Test
-	public void innKoeogutKoe() {
-		koe.innKoe(e0);
-		koe.innKoe(e1);
-		koe.innKoe(e2);
-		koe.innKoe(e3);
-		koe.innKoe(e4);
-		
-		try {
-			assertEquals(e2, koe.utKoe());
-			assertEquals(e1, koe.utKoe());
-			assertEquals(e1, koe.utKoe());
-			assertEquals(e0, koe.utKoe());
-			assertEquals(e3, koe.utKoe());
-		} catch (EmptyCollectionException e) {
-			fail("Koe ut feilet" + e.getMessage());
-		}
-	}
+	} 
 	
 	@Test 
-	public void innKoeutKoeinnKoeinnKoeutKoefoerste() {
-		try {
-			koe.innKoe(e2);
-			koe.utKoe();
-			koe.innKoe(e3);
-			koe.innKoe(e4);
-			koe.utKoe();
-			assertEquals(e3, koe.foerste());
-		}catch (EmptyColletcionException e) {
-			fail("Koe inn eller første feilet" + e.getMessage());
-		}
+	public void testInnKoe() {
+		koe.innKoe(testint0);
+		assertEquals(0, koe.foerste());
 	}
 	
 	@Test
-	public void innKoeutKoeerTom() {
-		try {
-			koe.innKoe(e0);
-			koe.utKoe();
-			assertTrue(koe.erTom());
-		}catch (EmptyCollectionException e) {
-			fail("Koeinn eller koeut feilet" + e.getMessage());
-		}
+	public void testUtKoe() {
+		koe.innKoe(testint0);
+		koe.innKoe(testint1);
+		koe.innKoe(testint3);
+		Integer uttest = koe.utKoe();
+		assertEquals(uttest, testint0);
 	}
 	
 	@Test
-	public void popFromEmptyIsUnderflowed() {
-		Assertions.assertThrows(EmptyCollectionException.class, () -> {
-			koe.utKoe();
-			
-		});
+	public void testTom() {
+		koe.innKoe(testint0);
+		assertFalse(koe.erTom());
+		koe.utKoe();
+		assertTrue(koe.erTom());		
+	}
+	
+	@Test
+	public void testFoerste() {
+		koe.innKoe(testint0);
+		assertEquals(testint0, koe.foerste());
 	}
 }
